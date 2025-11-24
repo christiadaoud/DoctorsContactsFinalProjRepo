@@ -14,8 +14,10 @@ SECRET_KEY = "django-insecure-mw2=muahfp&3fn)h8g^6qvyei*@wem+42fut3l21(mqgulu!le
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 ALLOWED_HOSTS = [
-    'cloudcomputing-doctorsapp-gydef4eghwfmetat.polandcentral-01.azurewebsites.net'
+    'cloudcomputing-doctorsapp-gydef4eghwfmetat.azurewebsites.net',
+    'localhost',
 ]
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # CSRF trusted origins for forms
