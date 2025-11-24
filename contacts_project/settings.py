@@ -14,15 +14,8 @@ SECRET_KEY = os.environ.get(
     "SECRET_KEY", "django-insecure-mw2=muahfp&3fn)h8g^6qvyei*@wem+42fut3l21(mqgulu!le"
 )
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-# Hosts allowed to access the app
-ALLOWED_HOSTS = [
-    '127.0.0.1',  # local testing
-    'localhost',  # local testing
-    'cloudcomputing-doctorsapp-gydef4eghwfmetat.polandcentral-01.azurewebsites.net',  # Azure URL
-]
+DEBUG = True
+ALLOWED_HOSTS = ['*']
 
 # CSRF trusted origins
 CSRF_TRUSTED_ORIGINS = [
