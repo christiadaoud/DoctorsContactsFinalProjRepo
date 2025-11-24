@@ -13,7 +13,7 @@ SECRET_KEY = "django-insecure-mw2=muahfp&3fn)h8g^6qvyei*@wem+42fut3l21(mqgulu!le
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ["doctorscontactsapp.azurewebsites.net"]
+ALLOWED_HOSTS = ['*']
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # CSRF trusted origins for forms
@@ -93,6 +93,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
