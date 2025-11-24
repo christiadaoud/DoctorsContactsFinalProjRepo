@@ -1,0 +1,34 @@
+<h1>Doctors</h1>
+<a href="{% url 'doctor_add' %}">Add Doctor</a>
+<br><br>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Specialty</th>
+        <th>City</th>
+        <th>Hospital</th>
+        <th>Fee</th>
+        <th>Rating</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for d in doctors %}
+    <tr>
+        <td>{{ d.name }}</td>
+        <td>{{ d.specialty }}</td>
+        <td>{{ d.city }}</td>
+        <td>{{ d.hospital }}</td>
+        <td>{{ d.fee }}</td>
+        <td>{{ d.rating }}</td>
+        <td>
+            <a href="{% url 'doctor_update' d.pk %}">Edit</a>
+            <a href="{% url 'doctor_delete' d.pk %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br>
+<a href="{% url 'recommend_doctors' %}">✨ Recommendation Engine</a>
+
