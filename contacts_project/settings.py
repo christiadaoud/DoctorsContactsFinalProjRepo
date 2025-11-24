@@ -9,20 +9,26 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-mw2=muahfp&3fn)h8g^6qvyei*@wem+42fut3l21(mqgulu!le"
+# For production, consider loading this from an environment variable
+SECRET_KEY = os.environ.get(
+    "SECRET_KEY", "django-insecure-mw2=muahfp&3fn)h8g^6qvyei*@wem+42fut3l21(mqgulu!le"
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+
+# Hosts allowed to access the app
 ALLOWED_HOSTS = [
-    'cloudcomputing-doctorsapp-gydef4eghwfmetat.azurewebsites.net',
-    'localhost',
+    '127.0.0.1',  # local testing
+    'localhost',  # local testing
+    'cloudcomputing-doctorsapp-gydef4eghwfmetat.polandcentral-01.azurewebsites.net',  # Azure URL
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# CSRF trusted origins for forms
+# CSRF trusted origins
 CSRF_TRUSTED_ORIGINS = [
-    "https://cloudcomputing-doctorsapp-gydef4eghwfmetat.polandcentral-01.azurewebsites.net"
+    "http://127.0.0.1:8000",  # local testing
+    "http://localhost:8000",  # local testing
+    "https://cloudcomputing-doctorsapp-gydef4eghwfmetat.polandcentral-01.azurewebsites.net",  # Azure URL
 ]
 
 # Application definition
@@ -76,18 +82,10 @@ DATABASES = {
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
-    },
+    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
+    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
+    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
+    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
 
 # Internationalization
@@ -99,7 +97,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
